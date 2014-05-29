@@ -1,12 +1,3 @@
-1. Clear the whargarbls in this file
-1. Update any deps needed
-1. Compile and test before updating
-1. Write the descriptive text above
-1. Set the project name in the polemic at the end
-
-
-
-
 edoc_rebar_frontend
 ===================
 
