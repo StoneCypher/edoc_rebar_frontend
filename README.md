@@ -1,13 +1,3 @@
-base_project
-============
-
-This is a checkout template for Erlang applications, with rebar and plt stuff in place already a la Concrete, and some other customizations, like having my name already in place and always needing `proper` and so on.
-
-If this text is still here, then I haven't finished the update steps below yet after a checkout.
-
-To check out transparently over a repo, go into the base project directory and type `git checkout-index -a -f --prefix=/c/projects/reponame/`.  ***It is important to not lose the trailing slash.***
-
-1. Go fix the filename of the `.app.src` in source, and update the appname inside.
 1. Clear the whargarbls in this file
 1. Update any deps needed
 1. Compile and test before updating
@@ -17,24 +7,49 @@ To check out transparently over a repo, go into the base project directory and t
 
 
 
+edoc_rebar_frontend
+===================
 
-tl;dr
------
-
-`rebar g-d co eu doc`
-
+An example rebar-available frontend for edoc.  Just dumps the parse tree.  More here to show a person how than anything.
 
 
 
 
-Current Library Status: *Usable*
+
+K wossis 'en innit
+------------------
+
+So, I wanted a different frontend than `edoc` creates, and the process wasn't exactly obvious.  But generally speaking, what you do is 
+
+On top of that, I also wanted [rebar]() to use my documentation creator.  That was also a bit inobvious, but basically, you just have your doc creator available as a library (get-deps anyone?) with the correct interface, and then set `{edoc_opts, [ {layout, highlighter_module_name} ]}` in your rebar file.  Fairly straightforward, it turns out, once you know how.
+
+In order to make the process more obvious, I've made what I think is probably the minimal doc generator: it just spits out a text version of the parse tree.  *****No reader would ever want this*****.  However, it's good for frontend authors, to see where to start, I believe.
+
+
+
+
+
+Thanks
+------
+
+People who helped me get this done, in order of who spoke first:
+
+ * [Fred Hebert](http://learnyousomeerlang.com/) <[mononcqc@ferd.ca](mailto:mononcqc@ferd.ca)>
+ * [Brian L. Troutwine](http://troutwine.us/) <[brian@troutwine.us](mailto:brian@troutwine.us)>
+ * [Vat Raghavan](http://blueventhorizon.com/) <[machinshin@gmail.com](mailto:machinshin@gmail.com)>
+
+
+
+
+
+Current Library Status: *Example*
 --------------------------------
 
-This library is considered to be (`whargarbl` ready | not ready and why)
-
-`whargarbl` Unit testing and stochastic testing and doc notes.
+This is an example of how to make an edoc frontend; it is not meant to be used itself.
 
 Improvements will be gladly accepted.
+
+
 
 
 
@@ -42,6 +57,8 @@ Author
 ------
 
 * [John Haugeland](mailto:stonecypher@gmail.com) of [http://fullof.bs/](http://fullof.bs/).
+
+
 
 
 
@@ -55,4 +72,4 @@ Copyright (c) 2014 John Haugeland.  All rights reserved.
 Polemic :neckbeard:
 -------------------
 
-`whargarbl` is MIT licensed, because viral licenses and newspeak language modification are evil.  Free is ***only*** free when it's free for everyone.
+`edoc_rebar_frontend` is MIT licensed, because viral licenses and newspeak language modification are evil.  Free is ***only*** free when it's free for everyone.

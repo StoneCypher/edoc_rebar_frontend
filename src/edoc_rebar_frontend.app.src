@@ -1,7 +1,7 @@
 %% -*- mode: erlang -*-
-{application, example_project,
+{application, edoc_rebar_frontend,
  [
-  {description, "Example Concrete generator project"},
+  {description, "Example of a rebar-aware edoc frontend replacement; does a terrible job"},
   {vsn, "0.0.1"},
   {registered, []},
   {applications, [
